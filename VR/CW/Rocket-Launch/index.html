@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="../Moving-Box/box.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-camera position = "0 3 3"></a-camera>
+    <a-entity id = "rocket" position = "0 0 -2" rotation = "0 0 0" move>
+      <a-cone id = "part1" position= "0 2.75 -2" radius-bottom = "1" radius-top = "0.1" height="1.5" color="tomato"></a-cone>
+      <a-cylinder position = "0 0 -2" id = "part2" radius="1" height = "4" color="orange"></a-cylinder>
+      <a-cylinder id="part3" position="0 -2 -2" radius="0.5" color="royalblue" height="2" fall-down>
+        <a-triangle position="1 -0.4 0" scale ="1.2 1.2 1.2" rotation = "0 0 270" color="green"></a-triangle>
+        <a-triangle position="-1 -0.4 0" scale ="1.2 1.2 1.2" rotation = "0 0 90" color="green"></a-triangle>
+      </a-cylinder>
+    </a-entity>
+  </a-scene>
+</body>
+</html>

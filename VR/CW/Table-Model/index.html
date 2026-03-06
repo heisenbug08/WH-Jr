@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene background="color: skyblue;">
+    <a-camera position="0 5 15"></a-camera>
+    <a-assets>
+      <a-asset-item id="table-obj" src="./table/tinker.obj"></a-asset-item>
+      <a-asset-item id="table-mtl" src="./table/obj.mtl"></a-asset-item>
+    </a-assets>
+
+    <!-- Obj models -->
+    <a-entity obj-model="obj: #table-obj; mtl: #table-mtl" position="0 0 3" scale = "0.1 0.1 0.1" rotation="-90 0 0"></a-entity>
+    
+    <!-- Primitive Entities -->
+    <a-box position="0 0 0" color="gray" width="20" height="0.3" depth="15"></a-box>
+    <a-box position="-9.8 5.1 0" width="0.3" height="10" depth="15" color="tomato"></a-box>
+    <a-box position="9.8 5.1 0" width="0.3" height="10" depth="15" color="tomato"></a-box>
+    <a-box position="0 5.1 -7.5" width="20" height="10" depth="0.3" color="tomato"></a-box>
+    <a-box position="0 10 0" color="aqua" width="20" height="0.3" depth="15"></a-box>
+  </a-scene>
+</body>
+</html>
