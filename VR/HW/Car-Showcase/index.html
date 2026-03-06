@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Showcase</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene background="color: rgb(135, 200, 235)">
+      <a-camera position="-2 1.6 3"></a-camera>
+      <a-plane
+        position="2 0 -5"
+        rotation="-90 45 0"
+        width="18.5"
+        height="6"
+        color="white"
+      ></a-plane>
+
+      <a-assets>
+        <a-asset-item id="yellow" src="./car-yellow.glb"></a-asset-item>
+        <a-asset-item id="green" src="./car-green.glb"></a-asset-item>
+        <a-asset-item id="white" src="./car-white.glb"></a-asset-item>
+        <a-asset-item id="silver" src="./car-silver.glb"></a-asset-item>
+      </a-assets>
+
+      <a-gltf-model
+        src="#white"
+        scale="160 160 170"
+        position="-2.5 0.47 -0.5"
+        rotation="0 90 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="#yellow"
+        scale="160 160 160"
+        position="0.5 0.45 -3.5"
+        rotation="0 90 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="#green"
+        scale="160 160 160"
+        position="3.5 0.45 -6.5"
+        rotation="0 90 0"
+      ></a-gltf-model>
+
+      <a-gltf-model
+        src="#silver"
+        scale="160 160 160"
+        position="6.5 0.49 -9.5"
+        rotation="0 90 0"
+      ></a-gltf-model>
+    </a-scene>
+  </body>
+</html>

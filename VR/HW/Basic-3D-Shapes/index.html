@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <title>3D Shapes</title>
+  <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon">
+  <script src = "https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-sky color = "skyblue"></a-sky>
+    <a-plane position = "0 0 -4" rotation = "-90 0 0" width = "13" height = "2.5" color = "whitesmoke"></a-plane>
+
+    <a-box position = "-5 0.625 -4" height = "1.25" depth = "1.25" width = "1.25" color = "purple"></a-box>
+    <a-sphere position = "-3 0.75 -4" radius = "0.75" color = "royalblue"></a-sphere>
+    <a-cylinder position = "-1 0.75 -4" radius = "0.5" height = "1.5" color = "forestgreen"></a-cylinder>
+    <a-cone position = "1 0.75 -4" radius-bottom = "0.6" radius-top = "0" height = "1.5" color = "gold"></a-cone>
+    <a-torus position = "3 0.8 -4" radius = "0.6" radius-tubular = "0.125" color = "orangered"></a-torus>
+    <a-dodecahedron position = "5 0.8 -4" radius = "0.8" color = "crimson"></a-dodecahedron>
+  </a-scene>
+</body>
+</html>

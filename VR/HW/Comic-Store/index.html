@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Virtual Comic Store</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="./components/comics.js"></script>
+    <script src="./components/highlight.js"></script>
+    <script src="./components/banner.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <a-scene background="color: skyblue" create-comics>
+      <a-sphere
+        id="fade"
+        position="0 1.6 0"
+        radius="0.999"
+        color="black"
+        opacity="0.5"
+        shader="flat"
+        side="back"
+        visible="false"
+      ></a-sphere>
+
+      <a-camera id="camera" wasd-controls="enabled: false;">
+        <a-text
+          position="0 0.7 -1"
+          value="Virtual Comic Store"
+          color="rgb(50, 125, 250)"
+          font="sourcecodepro"
+          align="center"
+          width="3"
+        ></a-text>
+        <a-text
+          position="0 0.55 -1"
+          value="Learn about some of the best comics!"
+          font="exo2semibold"
+          align="center"
+          width="1.5"
+        ></a-text>
+        <a-entity id="banner" visible="false">
+          <a-plane
+            position="0 0 -0.6"
+            color="orange"
+            scale="0.75 0.95 0"
+            shader="flat"
+          ></a-plane>
+          <a-plane
+            id="strip"
+            position="0 0.3 -0.599"
+            scale="0.7 0.3 0"
+            shader="flat"
+          ></a-plane>
+          <a-plane
+            position="0 -0.155 -0.599"
+            color="black"
+            scale="0.7 0.59 0"
+            shader="flat"
+          ></a-plane>
+          <a-text
+            id="text"
+            position="0 0.1 -0.598"
+            width="0.8"
+            align="center"
+            baseline="top"
+          ></a-text>
+        </a-entity>
+        <a-cursor scale="2 2 2" color="whitesmoke"></a-cursor>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
