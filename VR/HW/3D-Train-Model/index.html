@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>3D-Train-Model</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: #ff9632">
+    <a-assets>
+      <a-asset-item id="engine" src="./train-engine.glb"></a-asset-item>
+      <a-asset-item id="car" src="./train-car.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- Camera, Sky and plane -->
+    <a-camera position="0 1.5 0"></a-camera>
+    <a-sky src="bg.jpeg" scale="1.5 1.5 1.5" rotation="-45 45 0"></a-sky>
+    <a-plane position="0 0 -6" rotation="-90 0 0" width="14" height="4" color="white"></a-plane>
+
+    <!-- Train model -->
+    <a-entity>
+      <a-gltf-model src="#engine" scale="0.05 0.05 0.05" position="4.6 0 -6"></a-gltf-model>
+      <a-gltf-model src="#car" scale="0.05 0.05 0.05" position="2.3 0 -6"></a-gltf-model>
+      <a-gltf-model src="#car" scale="0.05 0.05 0.05" position="0 0 -6"></a-gltf-model>
+      <a-gltf-model src="#car" scale="0.05 0.05 0.05" position="-2.3 0 -6"></a-gltf-model>
+      <a-gltf-model src="#car" scale="0.05 0.05 0.05" position="-4.6 0 -6"></a-gltf-model>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
