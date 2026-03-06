@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Self-Designed Project</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-drag-controls@1.0.0/index.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="components/menu.js"></script>
+    <script src="components/shapes.js"></script>
+    <script src="components/grab.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a-scene vr-mode-ui="enabled: false;" menu>
+      <a-camera
+        look-controls="pointerLockEnabled: true;"
+        drag-controls="objects: .draggable;"
+        wasd-controls="acceleration: 2;"
+      >
+        <a-cursor scale="0.007 0.007 0.007" position="0 0 -0.006"></a-cursor>
+        <a-entity id="grab" position="0 0 -3" shapes></a-entity>
+      </a-camera>
+
+      <!-- Sky and lighting -->
+      <a-sky
+        radius="1000"
+        material="shader: skyshader; sunPosition: -5 4 -10"
+      ></a-sky>
+      <a-entity light="intensity: 0.6;" position="-200 300 -400"></a-entity>
+      <a-entity light="type: ambient; intensity: 0.5"></a-entity>
+
+      <!-- Ground -->
+      <a-box id="ground" scale="100 0.05 100" color="#4baf32"></a-box>
+    </a-scene>
+
+    <!-- Menu -->
+    <div style="position: absolute; top: 15px; left: 15px">
+      <pre>Press M to toggle menu</pre>
+      <pre id="pos-pre">Position: </pre>
+    </div>
+    <div id="shape-menu">
+      <div class="menu-row">
+        <input type="checkbox" id="flight-switch" name="flight-switch" />
+        <label for="flight-switch" style="position: relative; bottom: 8px">
+          <code>Flight</code>
+        </label>
+      </div>
+      <div class="menu-row">
+        <input
+          type="range"
+          id="reach-slider"
+          name="reach-slider"
+          value="3"
+          step="0.2"
+          min="1"
+          max="15"
+          style="position: relative; bottom: 5px"
+        />
+        <label for="reach-slider" style="bottom: 8px;">
+          <code id="reach-label">Reach:</code>
+        </label>
+      </div>
+      <div class="menu-row">
+        <img class="shape" src="./assets/cube.png" alt="box" />
+        <img class="shape" src="./assets/sphere.png" alt="sphere" />
+      </div>
+      <div class="menu-row">
+        <img class="shape" src="./assets/cone.png" alt="cone" />
+        <img class="shape" src="./assets/cylinder.png" alt="cylinder" />
+      </div>
+      <div class="menu-row">
+        <label for="scale-inp"><code>Scale:</code></label>
+        <input
+          id="scale-inp"
+          type="text"
+          placeholder="x y z"
+          name="scale-inp"
+        />
+      </div>
+      <div class="menu-row">
+        <label for="rotate-inp">
+          <code>Rotation:</code>
+        </label>
+        <input
+          id="rotate-inp"
+          type="text"
+          placeholder="x y z"
+          name="rotate-inp"
+        />
+      </div>
+      <div class="menu-row">
+        <label for="color-picker" style="bottom: 3px">
+          <code>Color:</code>
+        </label>
+        <input type="color" id="color-picker" name="color-picker" />
+      </div>
+    </div>
+  </body>
+</html>
