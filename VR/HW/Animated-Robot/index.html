@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3D Animated Robot</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene background="color: skyblue">
+      <!-- Camera and plane -->
+      <a-camera position="0 4.5 0"></a-camera>
+      <a-plane
+        position="0 0 -6"
+        rotation="-90 0 0"
+        width="10"
+        height="5"
+        color="whitesmoke"
+      ></a-plane>
+
+      <!-- Left leg -->
+      <a-entity id="left-leg">
+        <a-box position="1 0.3 -6" height="0.6" color="crimson"></a-box>
+        <a-cylinder
+          position="1 1 -6"
+          radius="0.4"
+          color="rgb(140, 140, 140)"
+        ></a-cylinder>
+      </a-entity>
+
+      <!-- Right leg -->
+      <a-entity id="right-leg">
+        <a-box position="-1 0.3 -6" height="0.6" color="crimson"></a-box>
+        <a-cylinder
+          position="-1 1 -6"
+          radius="0.4"
+          color="rgb(140, 140, 140)"
+        ></a-cylinder>
+      </a-entity>
+
+      <!-- Body and neck-->
+      <a-box
+        position="0 2.5 -6"
+        width="3.25"
+        height="2.5"
+        depth="1.5"
+        color="rgb(225, 200, 0)"
+      ></a-box>
+
+      <a-image position="0.75 3 -5.245" src="./assets/meter.png" width="0.75" height="0.75"></a-image>      
+      <a-image position="-0.75 2.5 -5.245" src="./assets/battery.png" width="0.75" height="1.25"></a-image>
+
+      <a-cylinder
+        position="0 4 -6"
+        radius="0.5"
+        color="rgb(140, 140, 140)"
+      ></a-cylinder>
+
+      <!-- Head and Antennae -->
+      <a-box
+        position="0 5 -6"
+        color="royalblue"
+        width="2.75"
+        height="1.75"
+      ></a-box>
+
+      <a-cone
+        position="0 6.125 -6"
+        radius-bottom="0.5"
+        radius-top="0"
+        height="0.5"
+        color="rgb(125, 125, 125)"
+      ></a-cone>
+
+      <a-entity id="left-antenna">
+        <a-cylinder
+          position="0.3 6.5 -6"
+          radius="0.025"
+          height="0.75"
+          rotation="0 0 -30"
+          color="rgb(50, 50, 50)"
+        >
+        </a-cylinder>
+        <a-sphere position="0.45 6.8 -6" radius="0.1" color="green"></a-sphere>
+      </a-entity>
+
+      <a-entity id="right-antenna">
+        <a-cylinder
+          position="-0.3 6.5 -6"
+          radius="0.025"
+          height="0.75"
+          rotation="0 0 30"
+          color="rgb(50, 50, 50)"
+        >
+        </a-cylinder>
+        <a-sphere position="-0.45 6.8 -6" radius="0.1" color="green"></a-sphere>
+      </a-entity>
+
+      <!-- Animated eyes -->
+
+
+    </a-scene>
+  </body>
+</html>
