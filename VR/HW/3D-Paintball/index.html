@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>3D Paintball</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="./components/shoot.js"></script>
+  </head>
+  <body>
+    <a-scene shoot physics="gravity: 100; restitution: 0;">
+      <!-- Camera -->
+      <a-camera id="cam" position="0 1.6 20" look-controls="pointerLockEnabled: true" dynamic-body="mass: 0;">
+        <a-sound
+          id="pop"
+          src="./assets/pop.mp3"
+          poolSize="20"
+          autoplay="false"
+          volume="0"
+          loop="false"
+        ></a-sound>
+        <a-gltf-model
+          id="gun"
+          src="./gun/scene.gltf"
+          rotation="0 -90 0"
+          scale="0.003 0.003 0.003"
+          position="0.01 -0.008 -0.015"
+        ></a-gltf-model>
+        <a-cursor position="0 0 -0.02" scale="0.03 0.03 0.03"></a-cursor>
+      </a-camera>
+
+      <!-- Environment -->
+      <a-sky
+        radius="1000"
+        material="shader: skyshader; sunPosition: -1 3 2"
+      ></a-sky>
+      <a-box
+        id="ground"
+        class="bulletHit"
+        position="0 -0.5 0"
+        scale="200 200 1"
+        rotation="-90 0 0"
+        color="rgb(50, 125, 25)"
+        static-body
+      ></a-box>
+
+      <!-- Paintball Arena -->
+      <a-box
+        id="wall1"
+        class="bulletHit"
+        color="#696969"
+        scale="50 20 0.1"
+        position="0 10 -25"
+        static-body
+      ></a-box>
+      <a-box
+        id="wall2"
+        class="bulletHit"
+        color="#696969"
+        scale="0.1 20 50"
+        position="-25 10 0"
+        static-body
+      ></a-box>
+      <a-box
+        id="wall3"
+        class="bulletHit"
+        color="#696969"
+        scale="50 20 0.1"
+        position="0 10 25"
+        static-body
+      ></a-box>
+      <a-box
+        id="wall4"
+        class="bulletHit"
+        color="#696969"
+        scale="0.1 20 50"
+        position="25 10 0"
+        static-body
+      ></a-box>
+      <a-box
+        id="wall4"
+        class="bulletHit"
+        color="#696969"
+        scale="0.1 20 50"
+        position="25 10 0"
+        static-body
+      ></a-box>
+    </a-scene>
+  </body>
+</html>
