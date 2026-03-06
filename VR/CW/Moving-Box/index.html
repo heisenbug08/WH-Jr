@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="./log.js"></script>
+  <script src="./box.js"></script>
+</head>
+
+<body>
+  <a-scene background="color: skyblue;">
+    <a-entity log="message: Hello;"></a-entity>
+    <a-entity position="0 0 -4" movingbox>
+      <a-box></a-box>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
